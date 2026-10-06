@@ -39,6 +39,7 @@ add_library(fabm_models_ersem OBJECT
 	    dvm_move.F90
 	    dvm_upper_lower_boundaries.F90
 	    dvm_weight_distribution.F90
+      sediment.F90    # LS: added sediemnt module
 	    )
 
 target_link_libraries(fabm_models_ersem PRIVATE fabm_base)

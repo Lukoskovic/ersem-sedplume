@@ -34,6 +34,8 @@ module ersem_model_library
    use ersem_dvm_upper_lower_boundaries
    use ersem_dvm_weight_distribution
 
+   use ersem_sediment                     ! LS added sediment module
+
    implicit none
 
    private
@@ -90,6 +92,7 @@ contains
          case ('dvm_upper_lower_boundaries');              allocate(type_ersem_dvm_upper_lower_boundaries::model)
          case ('dvm_weight_distribution');                 allocate(type_ersem_dvm_weight_distribution::model)
          ! Add new models here
+         case ( 'sediment' ); allocate(type_ersem_sediment::model)    ! LS added sediment module
          case default
             call self%type_base_model_factory%create(name,model)
       end select
